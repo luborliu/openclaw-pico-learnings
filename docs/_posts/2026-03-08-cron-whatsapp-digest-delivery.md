@@ -29,5 +29,18 @@ Architectural:
 - Stop relying on announce delivery from the isolated cron session.
 - Route scheduled broadcasts through a dedicated send path that is isolated from interactive chat state.
 
+### What changed in practice (delta worth capturing)
+The key lesson was that **“delivered” only means “a message was sent,” not “the right message was sent.”**
+
+So the fix that actually mattered was delivery architecture:
+
+1) Trigger the scheduled job as a **main-session system event**
+2) Send the WhatsApp message via an **explicit send path** (not announce)
+3) Keep interactive group agents and scheduled broadcasts **separate**, so accumulated “open loops” can’t leak into scheduled outputs
+
+Secondary improvements (nice-to-have, but not the root cause):
+- Mitigate Codex OAuth intermittency in cron cold starts by using a more reliable provider/model for the scheduled job.
+- Add fallback sources for external fetches (e.g., wttr.in → Open‑Meteo).
+
 ## Takeaway
 Measure success by **what content users actually see**, not by “sent/delivered” flags.

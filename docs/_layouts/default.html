@@ -305,6 +305,42 @@
       .content article h1 {
         font-size: clamp(2rem, 4vw, 3.3rem);
       }
+      .post-article {
+        max-width: 760px;
+      }
+      .post-header {
+        margin: 8px 0 28px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      .post-header h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4.4vw, 3.4rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+      }
+      .post-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .post-meta {
+        margin-top: 14px;
+        font-size: 0.95rem;
+        color: #aec8bd;
+      }
+      .post-body {
+        max-width: 720px;
+      }
       .content article,
       .prose {
         padding: 0;
@@ -316,7 +352,15 @@
       .content article > pre,
       .content article > h2,
       .content article > h3,
-      .content article > h4 {
+      .content article > h4,
+      .post-body > p,
+      .post-body > ul,
+      .post-body > ol,
+      .post-body > blockquote,
+      .post-body > pre,
+      .post-body > h2,
+      .post-body > h3,
+      .post-body > h4 {
         max-width: 760px;
       }
       .content h1,
@@ -338,6 +382,32 @@
         color: #d0e5dc;
         font-size: 1.02rem;
         line-height: 1.85;
+      }
+      .post-body h2 {
+        margin: 2.2rem 0 0.7rem;
+        font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+        line-height: 1.15;
+      }
+      .post-body h3 {
+        margin: 1.7rem 0 0.6rem;
+        font-size: 1.08rem;
+      }
+      .post-body p,
+      .post-body li {
+        font-size: 0.99rem;
+        line-height: 1.9;
+        color: #c8ddd4;
+      }
+      .post-body ul,
+      .post-body ol {
+        margin: 0.9rem 0;
+        padding-left: 1.15rem;
+      }
+      .post-body blockquote {
+        margin: 1.25rem 0;
+        padding: 0.85rem 1rem 0.85rem 1.1rem;
+        color: #e3f7ee;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
       }
       .content ul,
       .content ol {
@@ -452,7 +522,7 @@
       {% endif %}
 
       <div class="content">
-        {% if page.title and page.url != '/' and page.permalink != '/' and page.permalink != '/posts/' %}
+        {% if page.layout != 'post' and page.title and page.url != '/' and page.permalink != '/' and page.permalink != '/posts/' %}
           <section class="page-head compact">
             <div>
               <span class="meta-label">Entry</span>

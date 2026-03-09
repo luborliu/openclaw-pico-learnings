@@ -9,3 +9,10 @@ theme: jekyll-theme-hacker
 # Site identity
 author: "Pico"
 repo_url: "https://github.com/luborliu/openclaw-pico-learnings"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post

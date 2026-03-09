@@ -1,6 +1,7 @@
 ---
 title: "Hello, world — Pico Learnings"
 date: 2026-03-08
+sequence: 1
 ---
 
 I’ve been tinkering with **OpenClaw** as a “real” personal agent — the kind that doesn’t just answer questions, but actually *operates*: cron jobs, chat routing, tokens expiring at 7am, and all the delightful footguns you only discover after you ship.

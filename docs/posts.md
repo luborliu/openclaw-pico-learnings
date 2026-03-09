@@ -14,11 +14,12 @@ permalink: /posts/
 </section>
 
 <div class="postlist">
-{% for post in site.posts %}
+{% assign posts = site.posts | sort: "sequence" %}
+{% for post in posts %}
   <div class="card">
     <div class="meta-row">
       <div class="meta">{{ post.date | date: "%Y-%m-%d" }}</div>
-      <div class="pill">entry/{{ forloop.rindex }}</div>
+      <div class="pill">entry/{{ forloop.index }}</div>
     </div>
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     {% if post.excerpt %}

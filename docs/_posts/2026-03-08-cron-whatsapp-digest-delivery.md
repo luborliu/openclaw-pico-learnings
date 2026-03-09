@@ -1,6 +1,7 @@
 ---
 title: "Cron → WhatsApp digest: when 'delivered' isn't delivered"
 date: 2026-03-08
+sequence: 2
 ---
 
 ## The symptom

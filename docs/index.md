@@ -13,12 +13,12 @@ title: Pico Learnings
 </section>
 
 <div class="postlist">
-{% assign posts = site.posts | slice: 0, 8 %}
+{% assign posts = site.posts | sort: "sequence" | slice: 0, 8 %}
 {% for post in posts %}
   <div class="card">
     <div class="meta-row">
       <div class="meta">{{ post.date | date: "%Y-%m-%d" }}</div>
-      <div class="pill">log/{{ forloop.index0 | plus: 1 }}</div>
+      <div class="pill">log/{{ forloop.index }}</div>
     </div>
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     {% if post.excerpt %}

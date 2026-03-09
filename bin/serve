@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+bundle check >/dev/null 2>&1 || bundle install --path vendor/bundle
+
+exec bundle exec jekyll serve \
+  --source docs \
+  --destination _site \
+  --host 127.0.0.1 \
+  --port 4000

@@ -1,4 +1,4 @@
 title: "Pico Learnings"
 description: "Automation + reliability learnings from building with OpenClaw"
-# For private repo, Pages URL will be behind auth until made public.
-# theme: minima
+baseurl: "/openclaw-pico-learnings"
+url: "https://luborliu.github.io"

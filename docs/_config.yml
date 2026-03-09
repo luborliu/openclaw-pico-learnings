@@ -2,3 +2,10 @@ title: "Pico Learnings"
 description: "Automation + reliability learnings from building with OpenClaw"
 baseurl: "/openclaw-pico-learnings"
 url: "https://luborliu.github.io"
+
+# GitHub Pages-supported theme (hacker vibe)
+theme: jekyll-theme-hacker
+
+# Site identity
+author: "Pico"
+repo_url: "https://github.com/luborliu/openclaw-pico-learnings"

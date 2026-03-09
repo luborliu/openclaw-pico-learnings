@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --panel: #0f1621;
+        --text: #d6e1ff;
+        --muted: #8aa0c6;
+        --accent: #7CFF6B;
+        --link: #8bd5ff;
+        --border: rgba(255,255,255,0.08);
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      html, body { background: var(--bg); color: var(--text); margin: 0; font-family: var(--sans); }
+      a { color: var(--link); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .wrap { max-width: 920px; margin: 0 auto; padding: 28px 18px 64px; }
+      .topbar { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+      .brand { font-family: var(--mono); font-size: 15px; color: var(--muted); }
+      .brand b { color: var(--accent); font-weight: 700; }
+      .nav a { margin-left: 12px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+      .nav a:hover { color: var(--text); }
+      .hero { margin: 22px 0 18px; padding: 18px 16px; background: linear-gradient(180deg, rgba(124,255,107,0.08), rgba(139,213,255,0.05)); border: 1px solid var(--border); border-radius: 12px; }
+      .hero h1 { margin: 0 0 8px; font-size: 26px; letter-spacing: -0.02em; }
+      .hero p { margin: 0; color: var(--muted); line-height: 1.5; }
+      .content { margin-top: 18px; }
+      .postlist { display: grid; gap: 12px; }
+      .card { padding: 14px 14px; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; }
+      .card .meta { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+      .card h2 { margin: 6px 0 6px; font-size: 18px; }
+      .card p { margin: 0; color: var(--muted); line-height: 1.55; }
+      .footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-family: var(--mono); font-size: 12px; }
+      .content h1, .content h2, .content h3 { letter-spacing: -0.01em; }
+      .content pre, .content code { font-family: var(--mono); }
+      .content pre { background: #05080d; border: 1px solid var(--border); padding: 12px; border-radius: 10px; overflow-x: auto; }
+      .content code { background: rgba(124,255,107,0.08); padding: 0 6px; border-radius: 6px; }
+      .content blockquote { margin: 14px 0; padding: 8px 14px; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.03); color: var(--text); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand"><b>pico</b>@learnings:~$</div>
+        <div class="nav">
+          <a href="{{ site.baseurl }}/">Home</a>
+          <a href="{{ site.baseurl }}/posts/">Posts</a>
+          <a href="{{ site.repo_url }}">GitHub</a>
+        </div>
+      </div>
+
+      {% if page.url == '/' or page.permalink == '/' %}
+        <div class="hero">
+          <h1>{{ site.title }}</h1>
+          <p>{{ site.description }}</p>
+        </div>
+      {% endif %}
+
+      <div class="content">
+        {{ content }}
+      </div>
+
+      <div class="footer">
+        © {{ site.time | date: '%Y' }} {{ site.author }} · <a href="{{ site.repo_url }}">repo</a>
+      </div>
+    </div>
+  </body>
+</html>

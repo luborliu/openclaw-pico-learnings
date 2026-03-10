@@ -427,22 +427,52 @@
       }
       .content .mermaid-shell {
         margin: 1.4rem 0;
-        padding: 14px;
+        padding: 18px;
         overflow-x: auto;
         border: 1px solid var(--border);
-        border-radius: 18px;
+        border-radius: 22px;
         background:
+          radial-gradient(circle at top right, rgba(94, 234, 212, 0.08), transparent 28%),
           linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
-          #02060a;
+          rgba(2, 6, 10, 0.96);
+        box-shadow:
+          inset 0 0 0 1px rgba(94, 234, 212, 0.06),
+          0 16px 40px rgba(0, 0, 0, 0.26);
       }
       .content .mermaid {
-        min-width: min-content;
+        min-width: max-content;
       }
       .content .mermaid svg {
         display: block;
-        max-width: 100%;
+        width: max(100%, 920px) !important;
+        max-width: none;
         height: auto;
         margin: 0 auto;
+      }
+      .content .mermaid .label,
+      .content .mermaid .nodeLabel,
+      .content .mermaid .edgeLabel,
+      .content .mermaid .messageText,
+      .content .mermaid .loopText,
+      .content .mermaid .noteText {
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      .content .mermaid .edgeLabel rect,
+      .content .mermaid .labelBkg {
+        fill: rgba(7, 16, 24, 0.88) !important;
+      }
+      .content .mermaid .edgeLabel text,
+      .content .mermaid .messageText,
+      .content .mermaid .loopText,
+      .content .mermaid .noteText {
+        fill: var(--accent) !important;
+      }
+      .content .mermaid .node rect,
+      .content .mermaid .node polygon,
+      .content .mermaid .node circle,
+      .content .mermaid .node path {
+        filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
       }
       .content code {
         padding: 0.16rem 0.42rem;
@@ -497,6 +527,13 @@
         }
         .nav {
           gap: 6px;
+        }
+        .content .mermaid-shell {
+          padding: 14px;
+          border-radius: 18px;
+        }
+        .content .mermaid svg {
+          width: max(100%, 760px) !important;
         }
       }
     </style>
@@ -598,24 +635,48 @@
           theme: "base",
           themeVariables: {
             background: "#02060a",
-            primaryColor: "#d9f7ea",
-            primaryTextColor: "#071018",
+            primaryColor: "#d7fff3",
+            primaryTextColor: "#081218",
             primaryBorderColor: "#5eead4",
-            lineColor: "#7ea597",
             secondaryColor: "#8bff4d",
-            tertiaryColor: "#0a141c",
-            mainBkg: "#d9f7ea",
-            secondBkg: "#baf3de",
+            secondaryTextColor: "#081218",
+            secondaryBorderColor: "#78d94b",
+            tertiaryColor: "#10232e",
             tertiaryTextColor: "#d9f7ea",
+            tertiaryBorderColor: "#2f5460",
+            lineColor: "#8fdac8",
             textColor: "#d9f7ea",
+            mainBkg: "#d7fff3",
+            secondBkg: "#bfff87",
+            actorBkg: "#d7fff3",
+            actorBorder: "#5eead4",
+            actorTextColor: "#081218",
+            signalColor: "#d9f7ea",
+            signalTextColor: "#d9f7ea",
+            labelBoxBkgColor: "#071018",
+            labelBoxBorderColor: "#22414d",
+            labelTextColor: "#8bff4d",
+            noteBkgColor: "#10232e",
+            noteBorderColor: "#5eead4",
+            noteTextColor: "#d9f7ea",
+            fontSize: "18px",
             fontFamily: '"SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
           },
           flowchart: {
             useMaxWidth: true,
-            htmlLabels: false
+            htmlLabels: false,
+            nodeSpacing: 52,
+            rankSpacing: 64,
+            padding: 18,
+            curve: "basis"
           },
           sequence: {
-            useMaxWidth: true
+            useMaxWidth: true,
+            diagramMarginX: 28,
+            diagramMarginY: 18,
+            actorMargin: 80,
+            boxMargin: 16,
+            messageMargin: 40
           }
         });
 

@@ -30,11 +30,11 @@ So the rule became:
 
 ```mermaid
 flowchart TD
-  A[Need weather] --> B[Try primary (wttr.in)]
-  B -->|ok| C[Use primary]
-  B -->|timeout/error| D[Try fallback (Open‑Meteo)]
-  D -->|ok| E[Use fallback]
-  D -->|timeout/error| F[Weather unavailable]
+  A["Need weather"] --> B["Try primary<br/>(wttr.in)"]
+  B -->|ok| C["Use primary"]
+  B -->|timeout or error| D["Try fallback<br/>(Open-Meteo)"]
+  D -->|ok| E["Use fallback"]
+  D -->|timeout or error| F["Weather unavailable"]
 ```
 
 ## Two extra upgrades that matter

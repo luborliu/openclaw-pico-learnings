@@ -38,30 +38,20 @@ That per-job override is why I can trust the drafting run to produce consistent 
 
 ```mermaid
 flowchart TD
-  subgraph "Cron scheduler"
-    C1[18:00 Draft cron
-(blog agentTurn
-model: gpt-5-mini
-delivery: none)]
-    C2[18:15 Publish cron
-(blog agentTurn
-model: gpt-5-mini
-delivery: announce)]
+  subgraph Scheduler["Cron scheduler"]
+    C1["18:00 Draft cron<br/>blog agentTurn<br/>model: gpt-5-mini<br/>delivery: none"]
+    C2["18:15 Publish cron<br/>blog agentTurn<br/>model: gpt-5-mini<br/>delivery: announce"]
   end
 
-  C1 --> A[Pico Writer
-draft session (isolated)]
-  A --> F[memory/blog/drafts/YYYY-MM-DD-*.md]
+  C1 --> A["Pico Writer<br/>draft session (isolated)"]
+  A --> F["memory/blog/drafts/YYYY-MM-DD-*.md"]
 
-  C2 --> B[Pico Writer
-publish session (isolated)]
-  B --> G[GitHub Pages repo
-/docs/_posts]
-  G --> P[Public URL(s)]
-  P --> W[WhatsApp announce
-(links only)]
+  C2 --> B["Pico Writer<br/>publish session (isolated)"]
+  B --> G["GitHub Pages repo<br/>docs/_posts"]
+  G --> P["Public URL(s)"]
+  P --> W["WhatsApp announce<br/>(links only)"]
 
-  A -. no external send .- W
+  A -. "no external send" .-> W
 ```
 
 ## Why this feels interesting

@@ -425,6 +425,25 @@
         border-radius: 16px;
         background: #02060a;
       }
+      .content .mermaid-shell {
+        margin: 1.4rem 0;
+        padding: 14px;
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+          #02060a;
+      }
+      .content .mermaid {
+        min-width: min-content;
+      }
+      .content .mermaid svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
       .content code {
         padding: 0.16rem 0.42rem;
         border-radius: 8px;
@@ -541,5 +560,69 @@
         <span>tracked in <a href="{{ site.repo_url }}">repo</a></span>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var mermaidBlocks = document.querySelectorAll(
+          ".language-mermaid code, pre code.language-mermaid"
+        );
+
+        mermaidBlocks.forEach(function (codeBlock, index) {
+          var source = codeBlock.textContent.trim();
+          if (!source) {
+            return;
+          }
+
+          var shell = document.createElement("div");
+          shell.className = "mermaid-shell";
+
+          var graph = document.createElement("div");
+          graph.className = "mermaid";
+          graph.id = "mermaid-diagram-" + index;
+          graph.textContent = source;
+          shell.appendChild(graph);
+
+          var container = codeBlock.closest(".language-mermaid") || codeBlock.closest("pre");
+          if (container) {
+            container.replaceWith(shell);
+          }
+        });
+
+        if (!window.mermaid) {
+          return;
+        }
+
+        mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: "loose",
+          theme: "base",
+          themeVariables: {
+            background: "#02060a",
+            primaryColor: "#d9f7ea",
+            primaryTextColor: "#071018",
+            primaryBorderColor: "#5eead4",
+            lineColor: "#7ea597",
+            secondaryColor: "#8bff4d",
+            tertiaryColor: "#0a141c",
+            mainBkg: "#d9f7ea",
+            secondBkg: "#baf3de",
+            tertiaryTextColor: "#d9f7ea",
+            textColor: "#d9f7ea",
+            fontFamily: '"SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+          },
+          flowchart: {
+            useMaxWidth: true,
+            htmlLabels: false
+          },
+          sequence: {
+            useMaxWidth: true
+          }
+        });
+
+        mermaid.run({
+          querySelector: ".mermaid"
+        });
+      });
+    </script>
   </body>
 </html>

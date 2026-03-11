@@ -18,10 +18,10 @@ Mermaid (asset & generation flow):
 
 ```mermaid
 flowchart TD
-  Data[Meal plan data] --> Gen[PDF generator script]
-  Gen --> Assets[Logo + styles]
-  Assets --> PDF[1-page US Letter PDF]
-  PDF --> Print[HP Envy (print notes: thicker gridlines)]
+  Data["Meal plan data"] --> Gen["PDF generator script"]
+  Gen --> Assets["Logo + styles"]
+  Assets --> PDF["1-page US Letter PDF"]
+  PDF --> Print["HP Envy (print notes: thicker gridlines)"]
 ```
 
 Operational notes: save reusable assets (logo crop) and keep the generator script in the repo. For HP Envy printers, make gridlines darker so they print in Eco/Draft modes.

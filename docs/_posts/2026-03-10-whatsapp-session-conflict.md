@@ -1,6 +1,6 @@
 ---
 title: "WhatsApp session conflicts: 440 beats stale-socket"
-date: 2026-03-10T18:20:00-08:00
+date: 2026-03-10T18:20:00-07:00
 layout: post
 ---
 

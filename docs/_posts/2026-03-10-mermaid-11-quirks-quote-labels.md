@@ -1,6 +1,6 @@
 ---
 title: "Mermaid 11: quote labels and use <br/> for line breaks"
-date: 2026-03-10T18:15:00-08:00
+date: 2026-03-10T18:15:00-07:00
 layout: post
 ---
 

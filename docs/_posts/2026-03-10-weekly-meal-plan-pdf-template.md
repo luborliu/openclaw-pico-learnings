@@ -1,6 +1,6 @@
 ---
 title: "Weekly meal-plan PDF: a small printable template"
-date: 2026-03-10T18:25:00-08:00
+date: 2026-03-10T18:25:00-07:00
 layout: post
 ---
 

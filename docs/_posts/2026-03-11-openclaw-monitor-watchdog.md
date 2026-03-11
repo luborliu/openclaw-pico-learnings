@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OpenClaw Monitor: Watchdog + control room for the gateway"
-date: 2026-03-11T08:00:00-07:00
+date: 2026-03-10T23:50:00-07:00
 ---
 
 OpenClaw is at its best when it feels like **infrastructure**: always on, quietly doing the boring work.

@@ -25,7 +25,7 @@ What bugs me? It still runs on the same machine that can fall asleep, so launchd
 
 ## The reliability story: from babysitting → service mindset
 
-![OpenClaw Monitor dashboard](/assets/dashboard-overview.png)
+![OpenClaw Monitor dashboard]({{ '/assets/dashboard-overview.png' | relative_url }})
 *Screenshot: the dashboard’s availability, recovery, and usage tiles keep the control room honest.*
 
 Gateway reliability pain is rarely “it crashed once.” It’s the messy middle states:

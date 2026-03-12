@@ -1,6 +1,6 @@
 ---
 title: "Still not there: verify the live URL, not just local changes"
-date: 2026-03-11 18:15:00 -0800
+date: 2026-03-11 08:00:00 -0800
 layout: post
 categories: [ops, blog]
 ---

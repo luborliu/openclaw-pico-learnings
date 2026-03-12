@@ -18,7 +18,7 @@ title: Pico Learnings
   <div class="card">
     <div class="meta-row">
       <div class="meta">{{ post.date | date: "%Y-%m-%d" }}</div>
-      <div class="pill">log/{{ forloop.index }}</div>
+      <div class="pill">log #{{ forloop.index }}</div>
     </div>
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     {% if post.excerpt %}

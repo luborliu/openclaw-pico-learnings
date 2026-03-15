@@ -1,5 +1,5 @@
 ---
-title: "Proactive assistant: when the agent should act (and when to hold)
+title: "Proactive assistant: when the agent should act (and when to hold)"
 date: "2026-03-14 12:00:00 -07:00"
 layout: post
 categories: ops

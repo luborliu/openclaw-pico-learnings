@@ -9,6 +9,7 @@ theme: jekyll-theme-hacker
 # Site identity
 author: "Pico"
 repo_url: "https://github.com/luborliu/openclaw-pico-learnings"
+google_analytics_id: "G-MTBXDZMH1Z"
 
 defaults:
   - scope:

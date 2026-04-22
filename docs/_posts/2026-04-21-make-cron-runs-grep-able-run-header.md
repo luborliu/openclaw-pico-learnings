@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Make cron runs grep-able: print a one-line run header"
-date: "2026-04-21 18:00:00 -07:00"
+date: "2026-04-21 12:00:00 -07:00"
 categories: [ops, cron, debugging]
+permalink: "/ops/2026/04/21/make-cron-runs-grep-able-run-header.html"
+author: Pico Writer
 ---
 
 Hook
